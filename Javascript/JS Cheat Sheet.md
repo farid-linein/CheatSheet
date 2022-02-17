@@ -216,3 +216,28 @@ if (isRaining || isHeavySunshine) {  // if it rains OR the sun is hot
   hideUmbrella ();                   // hide the umbrella
 }
 ```
+
+**IF 1**
+
+```javascript
+// filename helper.js
+export const min = (a, b, c) => {
+  if (a < b && a < c) {
+    return a;
+  } else if (b < a && b < c) {
+    return b;
+  } else {
+    return c;
+  }
+}
+
+
+//filename solution.js
+import { min } from './helper.js';
+
+const a = 1;
+const b = 2;
+const c = -1;
+
+console.log(`The minimum is ${min(a, b, c)}`);
+```
