@@ -38,12 +38,27 @@ After creating and activating your virtual environment, you can now install any 
 
 ```
 (tutorial-env) $ pip freeze > requirements.txt
+
+
+(env) $ python -m pip install -r requirements.txt
 ```
 
 ### Deactivate
 
 ```
 (venv) PS> deactivate
+```
+
+### Django project
+
+```
+(env) $ django-admin startproject <project-name>
+```
+
+### Django app
+
+```
+env) $ django-admin startproject setup
 ```
 
 ### Command Reference
