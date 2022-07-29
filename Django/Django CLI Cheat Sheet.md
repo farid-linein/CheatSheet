@@ -55,12 +55,38 @@ After creating and activating your virtual environment, you can now install any 
 (env) $ django-admin startproject <project-name>
 ```
 
+void creating the additional top-level project folder
+
+```
+(env) $ django-admin startproject <projectname> .
+```
+
 ### Django app
 
 ```
-env) $ django-admin startproject setup
+(env) $ python manage.py startapp <appname>
 ```
 
 ### Command Reference
 
 ![](C:\Users\Farid\AppData\Roaming\marktext\images\2022-07-26-18-09-39-image.png)
+
+### Run Server
+
+```
+$ python manage.py runserver
+$ python manage.py runserver 8080
+$ python manage.py runserver 0:8080
+```
+
+Quit the server with CONTROL-C.
+
+
+
+### Data Base
+
+```
+py manage.py migrate
+
+py manage.py makemigrations <app Name>
+```
