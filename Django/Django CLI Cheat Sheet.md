@@ -81,12 +81,12 @@ $ python manage.py runserver 0:8080
 
 Quit the server with CONTROL-C.
 
-
-
 ### Data Base
 
 ```
 py manage.py migrate
 
 py manage.py makemigrations <app Name>
+
+py manage.py sqlmigrate polls 001
 ```
