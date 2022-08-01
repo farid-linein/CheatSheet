@@ -90,3 +90,9 @@ py manage.py makemigrations <app Name>
 
 py manage.py sqlmigrate polls 001
 ```
+
+Create SuperUser
+
+```
+python manage.py createsuperuser
+```
