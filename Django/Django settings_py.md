@@ -14,14 +14,12 @@ INSTALLED_APPS = [
 ]
 ```
 
-
-
 ### Move Templates to Project Level
 
 ```py
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'BACKEND': 'django.template.backends.djanDjangoTemplates',
         # 'DIRS': [],
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
@@ -35,6 +33,19 @@ TEMPLATES = [
         },
     },
 ]
+
 ```
 
 
+
+Ketika merubah lokasi project templates ke Project Level
+
+perlu mengimport OS
+
+
+
+```py
+import os
+
+....code lainya
+```
