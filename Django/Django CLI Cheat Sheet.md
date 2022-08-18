@@ -81,7 +81,7 @@ $ python manage.py runserver 0:8080
 
 Quit the server with CONTROL-C.
 
-### Data Base
+### Data Base / Model
 
 ```
 py manage.py migrate

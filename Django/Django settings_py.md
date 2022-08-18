@@ -33,16 +33,11 @@ TEMPLATES = [
         },
     },
 ]
-
 ```
-
-
 
 Ketika merubah lokasi project templates ke Project Level
 
 perlu mengimport OS
-
-
 
 ```py
 import os
