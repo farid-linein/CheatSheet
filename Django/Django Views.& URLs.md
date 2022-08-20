@@ -17,6 +17,22 @@ In a class-based view, this would become:
 
 When using Class-Based Views, you always add as_view() at the end of the view name.
 
+> The major difference is that ListView is best to list items from a database called model, while TemplateView is best to render a template with no model. Both views can be very concise with different meaning. Below is sample of a list view in it simplest form
+> 
+> ```cpp
+> Class SampleListView(ListView):    
+>     model = ModelName
+> ```
+> 
+> This will give you a context variable object_list and a template name in the form ("app_name/model_name_list.html") automatically that can be used to list all records in the database.
+> 
+> However, the TemplateView in its simplest form is
+> 
+> ```coffeescript
+> class SampleTemplateView(TemplateView):
+>     template_name = 'app_name/filename.html'
+> ```
+
 ### URLS
 
 ```py
