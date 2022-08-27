@@ -1,7 +1,5 @@
 ### Creating a Model
 
-
-
 ### Syntax Model
 
 ```py
@@ -9,10 +7,7 @@ from django.db import models
 
 class ModelName(models.Model):
         field_name = models.Field(**options)
-
 ```
-
-
 
 ### Example Models
 
@@ -20,7 +15,7 @@ class ModelName(models.Model):
 # import the standard Django Model
 # from built-in library
 from django.db import models
- 
+
 # declare a new model with a name "GeeksModel"
 class GeeksModel(models.Model):
         # fields of the model
@@ -28,14 +23,12 @@ class GeeksModel(models.Model):
     description = models.TextField()
     last_modified = models.DateTimeField(auto_now_add = True)
     img = models.ImageField(upload_to = "images/")
- 
+
         # renames the instances of the model
         # with their title name
     def __str__(self):
         return self.title
 ```
-
-
 
 ### CLI
 
@@ -52,16 +45,12 @@ So when we run, 
 Python manage.py makemigrations
 ```
 
-
-
 SQL Query to create above Model as a Table is created and   
  
 
 ```
  Python manage.py migrate
 ```
-
-
 
 ### Render a model in Django Admin Interface
 
@@ -73,10 +62,7 @@ from django.contrib import admin
 from .models import GeeksModel
 
 admin.site.register(GeeksModel)
-
 ```
-
-
 
 ### Django CRUD – Inserting, Updating and Deleting Data
 
@@ -145,17 +131,15 @@ Enter the following code into models.py file of **geeks** app. 
  
 
 ```py
-
 from django.db import models
 from django.db.models import Model
 # Create your models here.
 
 class GeeksModel(Model):
-	geeks_field = models.IntegerField()
+    geeks_field = models.IntegerField()
 
-	def __str__(self):
-		return self.geeks_field
-
+    def __str__(self):
+        return self.geeks_field
 ```
 
 After running makemigrations and migrate on Django and rendering above model, let us try to create an instance using string “**GfG is Best**“.   
@@ -167,10 +151,6 @@ You
  can see in the admin interface, one can not enter a string in an 
 IntegerField. Similarly every field has its own validations. To know 
 more about validations visit, [Built-in Field Validations – Django Models](https://www.geeksforgeeks.org/built-in-field-validations-django-models/)
-
-
-
-
 
 ### More on Django Models –
 
@@ -252,3 +232,28 @@ Here are the field options and attributes that an CharField can use.
 | [verbose_name](https://www.geeksforgeeks.org/verbose_name-django-built-in-field-validation/)     | A<br> human-readable name for the field. If the verbose name isn’t given, <br>Django will automatically create it using the field’s attribute name, <br>converting underscores to spaces. <br>  |
 | [validators](https://www.geeksforgeeks.org/custom-field-validations-in-django-models/)           | A list of validators to run for this field. See the [validators documentation](https://docs.djangoproject.com/en/2.2/ref/validators/) for more information. <br>                                |
 | [Unique](https://www.geeksforgeeks.org/uniquetrue-django-built-in-field-validation/)             | If True, this field must be unique throughout the table. <br>                                                                                                                                   |
+
+
+
+Context object name
+
+
+
+```py
+# blog/views.py
+from django.shortcuts import render
+
+from django.views.generic import ListView, DetailView
+from .models import Post
+
+# Create your views here.
+
+class BlogListView(ListView):
+    model = Post
+    template_name = 'home.html'
+
+class BlogDetailView(DetailView): # new
+    model = Post
+    # context_object_name = 'post_detail'
+    template_name = 'post_detail.html'
+```
