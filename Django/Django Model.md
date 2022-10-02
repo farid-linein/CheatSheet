@@ -232,28 +232,3 @@ Here are the field options and attributes that an CharField can use.
 | [verbose_name](https://www.geeksforgeeks.org/verbose_name-django-built-in-field-validation/)     | A<br> human-readable name for the field. If the verbose name isn’t given, <br>Django will automatically create it using the field’s attribute name, <br>converting underscores to spaces. <br>  |
 | [validators](https://www.geeksforgeeks.org/custom-field-validations-in-django-models/)           | A list of validators to run for this field. See the [validators documentation](https://docs.djangoproject.com/en/2.2/ref/validators/) for more information. <br>                                |
 | [Unique](https://www.geeksforgeeks.org/uniquetrue-django-built-in-field-validation/)             | If True, this field must be unique throughout the table. <br>                                                                                                                                   |
-
-
-
-Context object name
-
-
-
-```py
-# blog/views.py
-from django.shortcuts import render
-
-from django.views.generic import ListView, DetailView
-from .models import Post
-
-# Create your views here.
-
-class BlogListView(ListView):
-    model = Post
-    template_name = 'home.html'
-
-class BlogDetailView(DetailView): # new
-    model = Post
-    # context_object_name = 'post_detail'
-    template_name = 'post_detail.html'
-```

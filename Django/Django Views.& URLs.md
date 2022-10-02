@@ -100,3 +100,28 @@ would be inherited by all other templates?
 <h1>About page</h1>
 {% endblock content %}
 ```
+
+### Context object name
+
+> At the top we specify that this template inherits from base.html. Then display the  title and body from our context object, which DetailView makes accessible as post. 
+> 
+> Personally I found the naming of context objects in generic views extremely confusing  when first learning Django. Because our context object from DetailView is either our  model name  **post**   or   **object**   we could also update our template as follows and it would work exactly the same.
+
+```py
+# blog/views.py
+from django.shortcuts import render
+
+from django.views.generic import ListView, DetailView
+from .models import Post
+
+# Create your views here.
+
+class BlogListView(ListView):
+    model = Post
+    template_name = 'home.html'
+
+class BlogDetailView(DetailView): # new
+    model = Post
+    # context_object_name = 'post_detail'
+    template_name = 'post_detail.html'
+```
