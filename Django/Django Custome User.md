@@ -29,8 +29,6 @@ Creating our custom user model :
 AUTH_USER_MODEL = 'users.CustomUser' # new
 ```
 
-
-
 Custom User Model
 
 ```py
@@ -42,7 +40,6 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     age = models.PositiveIntegerField(null=True, blank=True)
-
 ```
 
 > **AbstractBaseUser vs AbstractUser**  
