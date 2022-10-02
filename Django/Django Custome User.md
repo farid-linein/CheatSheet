@@ -8,7 +8,7 @@ It uses the quite complex AbstractBaseUser when if we just use
 AbstractUser instead things are far simpler and still customizable.
 ```
 
-Creating our custom user model :
+## Creating our custom user model
 
 > • update settings.py  
 > • create a new CustomUser model  
@@ -44,3 +44,49 @@ class CustomUser(AbstractUser):
 
 > **AbstractBaseUser vs AbstractUser**  
 > AbstractBaseUser requires a very fine level of control and customization. We essentially rewrite Django. This can be helpful, but if we just want a custom user model  that can be updated with additional fields, the better choice is AbstractUser which  subclasses AbstractBaseUser. In other words, we write much less code and have less opportunity to mess things up. It’s the better choice unless you really know what  you’re doing with Django!
+
+
+
+For both new forms we are setting the model to our CustomUser and using the default fields via Meta.fields which includes all default fields. To add our custom age field we simply tack it on at the end and it will display automatically on our future sign up page. Pretty slick, no?
+
+The concept of fields on a form can be confusing at first so let’s take a moment to explore it further. Our CustomUser model contains all the fields of the default User model and our additional age field which we set.
+
+```python
+# users/forms.py
+from django import forms
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+
+from .models import CustomUser
+
+class CustomUserCreationForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = CustomUser
+        fields = UserCreationForm.Meta.fields + ('age',)
+
+class CustomUserChangeForm(UserChangeForm):
+    class Meta:
+        model = CustomUser
+        fields = UserChangeForm.Meta.fields
+```
+
+
+
+other step we need is to update our admin.py file since Admin is tightly  coupled to the default User model. We will extend the existing UserAdmin class to  use our new CustomUser model.
+
+```py
+# users/admin.py
+
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+
+from form import CustomUserCreationForm, CustomUserChangeForm
+from models import CustomUser
+
+class CustomUserAdmin(UserAdmin):
+    add_form = CustomUserCreationForm
+    form = CustomUserChangeForm
+    model = CustomUser
+
+    
+admin.site.register(CustomUser, CustomUserAdmin)
+```
