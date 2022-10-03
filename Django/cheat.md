@@ -9,7 +9,7 @@ Start a new Django project
 ~$  python3 -m venv venv
 
 # Activate virtual env
-~$  source venv/bin/activate
+~$  source venv/scripts/activate
 
 # If you want to deactivate virtual env
 ~$  deactivate
