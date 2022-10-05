@@ -12,19 +12,19 @@ Example:
 
 ```py
 class food():
- 
+
 # init method or constructor
 def __init__(self, fruit, color):
 self.fruit = fruit
 self.color = color
- 
+
 def show(self):
 print("fruit is", self.fruit)
 print("color is", self.color )
- 
+
 apple = food("apple", "red")
 grapes = food("grapes", "green")
- 
+
 apple.show()
 grapes.show()
 ```
@@ -36,19 +36,17 @@ Output:
 > Fruit is grapes
 > color is green
 
-
-
 ## **Python Class self Constructor**
 
 self is also used to refer to a [variable](https://www.edureka.co/blog/variables-and-data-types-in-python/) field within the class. Let’s take an example and see how it works:
 
 ```py
 class Person:
- 
+
 # name made in constructor
 def __init__(self, John):
 self.name = John
- 
+
 def get_person_name(self):
 return self.name
 ```
@@ -66,7 +64,7 @@ class this_is_class:
 def show(in_place_of_self):
 print("It is not a keyword "
 "and you can use a different keyword")
- 
+
 object = this_is_class()
 object.show()
 ```
@@ -78,5 +76,3 @@ It is not a keyword and you can use a different keyword
 With this, we have come to the end of our article. I hope you understood the use of self and how it works in Python.
 
 *Check out the [Python Certification course](https://www.edureka.co/python-programming-certification-training)* *by Edureka. This* *Training course is designed for students and professionals who want to be a Python Programmer. The course is designed to give you a head start into [Python programming](https://www.edureka.co/blog/python-programming-language) and train you for both core and advanced concepts.*
-
-

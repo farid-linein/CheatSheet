@@ -1,6 +1,6 @@
 # SETTING.PY config
 
-### add new app
+## add new app
 
 ```py
 INSTALLED_APPS = [
@@ -14,7 +14,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-### Move Templates to Project Level
+## Move Templates to Project Level
 
 ```py
 TEMPLATES = [
@@ -43,4 +43,29 @@ perlu mengimport OS
 import os
 
 ....code lainya
+```
+
+
+
+## Postgres DB
+
+```py
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': ‘<database_name>’,
+       'USER': '<database_username>',
+       'PASSWORD': '<password>',
+       'HOST': '<database_hostname_or_ip>',
+       'PORT': '<database_port>',
+   }
+}
+```
+
+
+
+##### example
+
+```py
+
 ```
