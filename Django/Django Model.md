@@ -155,7 +155,6 @@ more about validations visit, [Built-in Field Validations – Django Models](htt
 ### More on Django Models –
 
 - [Change Object Display Name using __str__ function – Django Models](https://www.geeksforgeeks.org/change-object-display-name-using-__str__-function-django-models-python/)   
-   
 - [Custom Field Validations in Django Models](https://geeksforgeeks.org/custom-field-validations-in-django-models/)
 - [Django python manage.py migrate command](https://www.geeksforgeeks.org/django-manage-py-migrate-command-python/)
 - [Django App Model – Python manage.py makemigrations command](https://www.geeksforgeeks.org/django-app-model-python-manage-py-makemigrations-command/)
