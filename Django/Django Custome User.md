@@ -89,10 +89,6 @@ class CustomUserAdmin(UserAdmin):
 admin.site.register(CustomUser, CustomUserAdmin)
 ```
 
-
-
-
-
 # [How to add fields to the User model in Django](https://cpadiernos.github.io/how-to-add-fields-to-the-user-model-in-django.html "Permalink to How to add fields to the User model in Django")
 
 Published: Wed 11 March 2020
